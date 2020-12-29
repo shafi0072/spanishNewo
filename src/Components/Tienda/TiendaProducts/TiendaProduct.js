@@ -2,7 +2,7 @@ import React from 'react';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import { Link, useParams } from 'react-router-dom';
 const TiendaProduct = (props) => {
-    const {name, img, email, price ,_id, Key} = props.data;
+    const {name, img, price , Key} = props.data;
     
     return (
         
