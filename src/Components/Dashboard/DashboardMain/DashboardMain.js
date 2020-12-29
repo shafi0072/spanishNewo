@@ -8,6 +8,7 @@ import { useState } from 'react';
 import DashboardContent from './DashboardContent';
 import DashBlogs from './DashBlogs';
 import DashboardTiendaMain from './DashboardTiendaMain';
+import Footer from '../../Footer/Footer';
 const DashboardMain = () => {
     const [clickHandle, setClickHandle] = useState({
         Dashboard1:false,
@@ -119,7 +120,7 @@ const DashboardMain = () => {
         <div>
             <DashboardNavbar/>
             <div className="row">
-                <div className="col-md-2 d-flex justify-content-center" style={{backgroundColor:'#2c2c2c', height:'100vh'}}>
+                <div className="col-md-2 d-flex justify-content-center" style={{backgroundColor:'#2c2c2c', height:'200vh'}}>
                     <div className="mt-5">
                        {clickHandle.Dashboard1 && <h5 style={{color:'white', fontFamily:'Bien', cursor:'pointer'}} onClick={handleDashChange} className="mb-4 pl-5 pr-5 pt-1 pb-1"><DashboardIcon/> Dashboard</h5>}
                        {clickHandle.Dashboard2 && <h5 style={{color:'white', fontFamily:'Bien', cursor:'pointer',  backgroundColor:'#C6C6C6'}} onClick={handleDashChange2} className="mb-4 pl-5 pr-5 pt-1 pb-1"><DashboardIcon/> Dashboard</h5>}
@@ -137,6 +138,7 @@ const DashboardMain = () => {
                     {clickHandle.Tienda2 && <DashboardTiendaMain/>}
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 };

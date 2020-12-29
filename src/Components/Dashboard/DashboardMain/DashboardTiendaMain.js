@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import DashboardTiendaProducts from './DashboardTiendaProducts';
 import DashTiendaNuevoproducto from './DashTiendaNuevoproducto';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 const DashboardTiendaMain = () => {
+    const [tiendaProducts, setTiendaProducts] = useState([])
     const [subMenu, setSubMenu] = useState({
         Productos: true,
         Pedidos:false,
@@ -65,6 +66,11 @@ const DashboardTiendaMain = () => {
         newMenu.isProductUpload = false
         setSubMenu(newMenu);
     }
+    useEffect(() => {
+        fetch('http://localhost:5000/tiendaProducts')
+        .then(res => res.json())
+        .then(data => setTiendaProducts(data))
+    }, [tiendaProducts])
     return (
         <div className='container mt-5'>
             {subMenu.isProductUpload && <ArrowBackIosIcon fontSize="large" className="bg-dark text-light pl-2" style={{borderRadius:'100%', cursor:'pointer'}} onClick={handleBackWord}/>}
@@ -138,7 +144,7 @@ const DashboardTiendaMain = () => {
                 <h6 style={{fontFamily:'Bien'}} className='text-light'>Imagen</h6>
                 </div>
             </div>}
-            {subMenu.Productos && <DashboardTiendaProducts/>}
+            {subMenu.Productos && tiendaProducts.map(date => <DashboardTiendaProducts date = {date}/>)}
             {subMenu.isProductUpload && <DashTiendaNuevoproducto/>}
         </div>
     );
