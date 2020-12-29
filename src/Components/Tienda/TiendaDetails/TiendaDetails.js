@@ -5,7 +5,9 @@ import '../../Catalog/CatalogoOverView/catalogoOver.css'
 import Ratings from '../../Shared/Ratings/Ratings';
 import {useParams} from 'react-router-dom';
 import Slider2 from '../../Catalog/CatalogoOverView/Slider2';
-
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import AddIcon from '@material-ui/icons/Add';
+import RemoveIcon from '@material-ui/icons/Remove';
 const TiendaDetails = () => {
     const {id} = useParams();
     const [products, setProducts] = useState({})
@@ -55,13 +57,36 @@ const TiendaDetails = () => {
                                     <div className="mt-2">
                                         <p>Descripción</p>
                                     </div>
+                                    <div className=" row mt-2">
+                                        <div className="col-md-6">
+                                            <div className="d-flex justify-content-between" style={{borderBottom:'1px solid gray'}}>
+                                            <p>Color</p>
+                                            <ExpandMoreIcon/>
+                                            </div>
+                                        </div>
+                                        <div className="col-md-6">
+                                        <div className="d-flex justify-content-between" style={{borderBottom:'1px solid gray'}}>
+                                            <p>Tamaño</p>
+                                            <ExpandMoreIcon/>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div className="mt-2">
                                         <small className='text-secondary'>
                                             {description}
                                         </small>
                                     </div>
                                     <div className="mt-2">
-                                        <p>Disonible</p>
+                                        <h6>Stock disponible</h6>
+                                    </div>
+                                    <div className="row mt-2">
+                                        <div className="col-md-4 d-flex justify-content-between">
+                                            <AddIcon/>
+                                            <input type="number" style={{width:'40%'}} className="text-center" name="quentity" value="1" id=""/>
+                                            <RemoveIcon/>
+                                        </div>
+                                        <div className="col-md-4"></div>
+                                        <div className="col-md-4"></div>
                                     </div>
                                     <div className="mt-5">
                                         <button

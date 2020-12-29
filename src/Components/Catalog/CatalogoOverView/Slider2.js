@@ -11,7 +11,7 @@ const Slider2 = (props) => {
                 <div class="carousel-inner">
                     <div class="carousel-item  active">
                         <div className="d-flex justify-content-center">
-                            <img
+                            <img style={{width:'50%'}}
                                 class="d-block w-10 text-center mt-5 mb-5"
                                 src={`http://localhost:5000/${img}.jpeg`}
                                 alt="First slide"/>
@@ -20,6 +20,7 @@ const Slider2 = (props) => {
                     <div class="carousel-item  ">
                         <div className="d-flex justify-content-center">
                             <img
+                            style={{width:'50%'}}
                                 class="d-block w-10 text-center mt-5 mb-5"
                                 src={`http://localhost:5000/${img}.jpeg`}
                                 alt="First slide"/>
@@ -28,6 +29,7 @@ const Slider2 = (props) => {
                     <div class="carousel-item  ">
                         <div className="d-flex justify-content-center">
                             <img
+                            style={{width:'50%'}}
                                 class="d-block w-10 text-center mt-5 mb-5"
                                 src={`http://localhost:5000/${img}.jpeg`}
                                 alt="First slide"/>
