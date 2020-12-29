@@ -1,0 +1,36 @@
+.SilderResponsiver{
+    width: 90%;
+    height: 600%;
+}
+.card-body{
+    max-width: 100%!important;
+}
+.ProductsImg {
+    width: 50%!important;
+}
+.card-title{
+    color:#fef7a7;
+    fontFamily: 'Prata', serif
+}
+.card-text{
+    color: white;
+}
+
+@media only screen and (max-width: 600px){
+    .card-body{
+        max-width: 100%!important;
+    }
+    .ProductsImg {
+        text-align: center;
+        width: 50%!important;
+    }
+    .card-title{
+        color:#fef7a7;
+        fontFamily: 'Prata', serif;
+        font-size: 15px;
+    }
+    .PricingResponsive{
+        color: white;
+        font-size: 19px;
+    }
+}

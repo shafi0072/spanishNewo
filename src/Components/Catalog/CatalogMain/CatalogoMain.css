@@ -1,0 +1,42 @@
+.CataroryList{
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 30px;
+    text-decoration: none;
+    font-family: 'Prata', serif;
+    
+}
+.CatalogoHeading{
+    font-size: 60px;
+    font-family: Bien;
+    font-weight: 500;
+}
+.SearchForm{
+    border:none;
+}
+    
+.inputDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.SearchLable{
+    font-family: Bien;
+    font-size: 30px;
+    color: white;
+}
+.searChBackingImage{
+    width: 100%;
+    position: relative;
+    bottom: 08px;
+}
+.FullSearchArea{
+    position: relative;
+    left: 15px;
+}
+.SearchBox{
+    position: relative;
+    bottom: 500px;
+    box-shadow: -16px 12px 30px #1d1c1c;
+}

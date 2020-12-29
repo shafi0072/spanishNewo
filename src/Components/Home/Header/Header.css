@@ -1,0 +1,105 @@
+.HeaderBg{
+    background-image: url(../../../Resorce//Backgrounds/forshafivai-01.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.OldManImage{
+    background-image:linear-gradient(#fef7a77a, #fef7a79a), url(../../../Resorce/Imagenes/oldman.jpg);
+    height: 700px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.ArrowButton{
+    background-color: #fef7a7;
+    border: none;
+    padding: 10px;
+    height: 70px;
+}
+.leftCOl{
+    padding: 10px;
+    margin-top: 05%;
+    border-right: 2px solid #dcba52;
+}
+.MainDivForBottom{
+    position: relative;
+    bottom: 60px;
+    background-image: linear-gradient(to left,#f4e47d , #ddbb53);
+    padding: 10px;
+    width: 85%;
+    height: 250px;
+    box-shadow: 10px 10px 40px rgb(61, 61, 61);
+}
+.right_content{
+    padding: 10px;
+    margin-top: 05%;
+}
+.HeadingFonts{
+    font-family: Bien;
+    font-weight: 400;
+    font-size: 100px;
+}
+.Primera{
+    font-family: primera;
+    font-size: 30px;
+}
+.comprarBtn{
+    font-family: 'Prata', serif;
+}
+.AccesoriesFonts{
+    font-family: Bien;
+    font-size: 60px;
+    color: #fef7a7;
+}
+.BottomContent{
+    padding: 20px;
+}
+.SeeAll{
+    padding: 20px;
+    width: 30%;
+    background-color: #fef7a7;
+    box-shadow: 10px 10px 40px rgb(61, 61, 61);
+}
+.Distributor{
+    background-color: #fef7a7;
+    padding: 80px;
+}
+
+.seemoreArea{
+    font-family: 'Prata', serif; 
+    
+    font-weight: 900;
+}
+
+@media only screen and (max-width: 600px) {
+    .MainDivForBottom{
+        position: relative;
+        top: 40px;
+        height: 100%;
+    }
+    .HeaderBg{
+        background-image: linear-gradient(#fef7a7, #fef7a7);
+    }
+.HeadingFonts{
+    font-size: 50px;
+    
+}
+.ArrowButton{
+    background-color: #343a40;
+    color: white;
+    
+    
+}
+
+.AccesoriesFonts{
+    font-family: Bien;
+    font-size: 40px;
+    color: #fef7a7;
+}
+.seemoreArea{
+    font-family: 'Prata', serif; 
+    font-size: 18px;
+    font-weight: 300;
+}
+  }

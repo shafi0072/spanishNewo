@@ -1,0 +1,31 @@
+.sliderMainArea{
+    width: 80%;
+}
+.sliderDivArea{
+    width: 100%;
+    border: 1px solid gray;
+}
+.sliderListDiv{
+    width: 100%;
+}
+.sliderImageParent{
+    width: 100%;
+}
+.sliderImg{
+    width: 50%;
+}
+.previousBtn{
+    background-color: #dab74f;
+    padding: 20px;
+    position: relative;
+    right: 30%;
+}
+.nextBtn{
+    background-color: #dab74f;
+    position: relative;
+    padding: 20px;
+    left: 30%;
+}
+.detailsArea{
+    border: 1px solid lightgray;
+}

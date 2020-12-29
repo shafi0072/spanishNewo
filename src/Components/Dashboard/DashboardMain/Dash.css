@@ -1,0 +1,12 @@
+.DashSideBar{
+    background-color: black;
+    height: 100vh;
+}
+.PichartPositionChange{
+    position: relative;
+    left: 20%;
+}
+.fullAreaOfPieCHartr{
+    position: relative;
+    bottom: 30%;
+}

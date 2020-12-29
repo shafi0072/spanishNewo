@@ -1,0 +1,35 @@
+.menuStyling{
+    padding: 20px 30px!important;
+}
+.fullMenu{
+    display: flex;
+    justify-content: space-around;
+}
+.BlackScreen{
+    color: white!important;
+}
+.navBg{
+    
+    background-image: url(../../../Resorce//Backgrounds/forshafivai-01.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.shopingCart{
+    color: #fef7a7;
+}
+.navBlack{
+    background-image: url(../../../Resorce//Backgrounds/forshafivai-01.jpg);
+}
+@media only screen and (max-width: 600px){
+    .BlackScreen{
+        color: black!important;
+    }
+    .navBg{
+        background-image: linear-gradient(#fef7a7, #fef7a7);
+    }
+    .shopingCart{
+        color: black;
+    }
+}

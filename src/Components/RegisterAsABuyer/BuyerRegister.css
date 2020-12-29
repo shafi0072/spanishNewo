@@ -1,0 +1,18 @@
+.SideOfReister{
+    background-image:linear-gradient(#fef7a750,#fef7a79a),url(../../Resorce/Imagenes/Imagen\ Fila-01.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.SideOfContract{
+    background-image:linear-gradient(#fef7a7c5,#fef7a742),url(../../Resorce/Imagenes/Imagen\ Fila-02.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.formDiv{
+    width: 70%;
+}
+.FormInfoStatus{
+    width: 70%;
+}

@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+@font-face {
+  font-family: 'DMSerifText';
+  src: local('DMSerifText'), url(./Resorce/fonts/DMSerifText-Italic.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Bien';
+  src: local('Bien'), url(./Resorce/fonts/Bien.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'primera';
+  src: local('primera'), url(./Resorce/fonts/b.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'com';
+  src: local('com'), url(./Resorce/fonts/com.ttf) format('truetype');
+}
+

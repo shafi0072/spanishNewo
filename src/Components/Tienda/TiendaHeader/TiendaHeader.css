@@ -1,0 +1,15 @@
+.TiendaHeader{
+    background-image: url(../../../Resorce/tiendaBack.png);
+    background-position: center center center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   height: 100%;
+}
+.searchAreaForTienda{
+    background-color: white;
+    width: 30%;
+    padding: 0px 05px;
+}
+.searchAreaForTienda>input{
+    border: none;
+}
