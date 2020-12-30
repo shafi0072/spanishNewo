@@ -3,12 +3,7 @@ import Footer from '../Footer/Footer';
 import Navbar from '../Shared/Navbar/Navbar';
 import './BuyerRegister.css';
 import { userContext } from '../../App';
-import firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/firestore";
-import firebaseConfig from './firebase.config';
 
-  firebase.initializeApp(firebaseConfig)
 
 const BuyerRegister = () => {
 
@@ -36,22 +31,6 @@ const BuyerRegister = () => {
   }
 
 const handleSubmit =(event) => {
-  if(userInfo.name && userInfo.email && userInfo.password){
-    firebase.auth().createUserWithEmailAndPassword(userInfo.email, userInfo.password)
-    .then( res => {
-      const newUserInfo = {...userInfo};
-      newUserInfo.error = '';
-      newUserInfo.success = true;
-      setUserInfo(newUserInfo);
-      updateUserName(userInfo.name);
-    })
-    .catch( error => {
-      const newUserInfo = {...userInfo};
-      newUserInfo.error = error.message;
-      newUserInfo.success = false;
-      setUserInfo(newUserInfo);
-    });
-  }
   fetch('http://localhost:5000/signup',{
       method:"POST",
       headers:{'content-type':'application/json'},
@@ -66,18 +45,7 @@ const handleSubmit =(event) => {
  
   event.preventDefault();
 }
-const updateUserName = name =>{
-  
-  const user = firebase.auth().currentUser;
 
-  user.updateProfile({
-    displayName: name
-  }).then(function() {
-    console.log('user name updated successfully')
-  }).catch(function(error) {
-    console.log(error)
-  });
-}
   
   const handleBlur = event => {
     let isFieldValid;
@@ -128,22 +96,7 @@ const updateUserName = name =>{
   }
  
  const handleSubmit2 = (event) => {
-  if(userInfo.email && userInfo.password){
-      firebase.auth().signInWithEmailAndPassword(userInfo.email, userInfo.password)
-      .then(res => {
-          const newUserInfo = {...userInfo};
-          newUserInfo.error = '';
-          newUserInfo.success = true;
-          setUserInfo(newUserInfo);
-          console.log('sign in user info', res.user);
-        })
-        .catch(function(error) {
-          const newUserInfo = {...userInfo};
-          newUserInfo.error = error.message;
-          newUserInfo.success = false;
-          setUserInfo(newUserInfo);
-        });
-  }
+  
   event.preventDefault();
 }
 const handleLogInRelode2 = () => {
@@ -203,7 +156,7 @@ const handleLogInRelode2 = () => {
                                    type="text"
                                    class="form-control"
                                    name="name"
-                                   onBlur={handleBlur}
+                                   onChange={handleBlur}
                                    id="exampleInputEmail1"
                                    aria-describedby="emailHelp"
                                    placeholder="Nombre de pila"/>
@@ -214,7 +167,7 @@ const handleLogInRelode2 = () => {
                                <input
                                    type="text"
                                    class="form-control"
-                                   onBlur={handleBlur}
+                                   onChange={handleBlur}
                                    name="LastName"
                                    id="exampleInputEmail1"
                                    aria-describedby="emailHelp"
@@ -227,7 +180,7 @@ const handleLogInRelode2 = () => {
                                <input
                                    type="number"
                                    class="form-control"
-                                   onBlur={handleBlur}
+                                   onChange={handleBlur}
                                    name="number"
                                    id="exampleInputEmail1"
                                    aria-describedby="emailHelp"
@@ -239,7 +192,7 @@ const handleLogInRelode2 = () => {
                                <input
                                    type="email"
                                    class="form-control"
-                                   onBlur={handleBlur}
+                                   onChange={handleBlur}
                                    name="email"
                                    id="exampleInputEmail1"
                                    aria-describedby="emailHelp"
@@ -251,7 +204,7 @@ const handleLogInRelode2 = () => {
                                <input
                                    type="text"
                                    class="form-control"
-                                   onBlur={handleBlur}
+                                   onChange={handleBlur}
                                    name="Habla"
                                    id="exampleInputEmail1"
                                    aria-describedby="emailHelp"
@@ -263,7 +216,7 @@ const handleLogInRelode2 = () => {
                                <input
                                    type="text"
                                    class="form-control"
-                                   onBlur={handleBlur}
+                                   onChange={handleBlur}
                                    name="ciudad"
                                    id="exampleInputEmail1"
                                    aria-describedby="emailHelp"
@@ -275,7 +228,7 @@ const handleLogInRelode2 = () => {
                            <input
                                type="text"
                                class="form-control"
-                               onBlur={handleBlur}
+                               onChange={handleBlur}
                                name="país"
                                id="exampleInputEmail1"
                                aria-describedby="emailHelp"
@@ -288,7 +241,7 @@ const handleLogInRelode2 = () => {
                                    type="password"
                                    name="password"
                                    class="form-control"
-                                   onBlur={handleBlur}
+                                   onChange={handleBlur}
                                    id="exampleInputPassword1"
                                    placeholder="Contraseña"/>
                            </div>

@@ -81,9 +81,9 @@ const TiendaDetails = () => {
                                     </div>
                                     <div className="row mt-2">
                                         <div className="col-md-4 d-flex justify-content-between">
-                                            <AddIcon/>
-                                            <input type="number" style={{width:'40%'}} className="text-center" name="quentity" value="1" id=""/>
                                             <RemoveIcon/>
+                                            <input type="number" style={{width:'40%'}} className="text-center" name="quentity" value="1" id=""/>
+                                            <AddIcon/>
                                         </div>
                                         <div className="col-md-4"></div>
                                         <div className="col-md-4"></div>
