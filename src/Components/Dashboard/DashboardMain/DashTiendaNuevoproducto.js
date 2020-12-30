@@ -10,23 +10,28 @@ const DashTiendaNuevoproducto = () => {
         Descipción:"",
         ShippingFee:""
     });
-    const [files, setFile] = useState([])
+const [files, setFile] = useState([]);
+const [file2, setFile2] = useState([]);
 const handleOnChange = (e) => {
     const newTiendaProducts = {...tiendaProducts}
     newTiendaProducts[e.target.name] = e.target.value;
     setTiendaProducts(newTiendaProducts);
 }
 const handleUploadImage = (e) => {
-    const newFile = [...files]
+    const newFile = [...files];
     newFile.file1 = e.target.files[0];
-    newFile.file2 = e.target.files[1];
     setFile(newFile);
+}
+const handleUploadImage2 = (e) => {
+    const newFile = [...file2];
+    newFile.file2 = e.target.files[0];
+    setFile2(newFile);
 }
 const handleSubmit = (e) => {
    console.log('clicked');
   const formData = new FormData()
   formData.append('File1', files.file1);
-  formData.append('File2', files.file2);
+  formData.append('File2', file2.file2);
   formData.append('ProductsName', tiendaProducts.Productsname);
   formData.append('price', tiendaProducts.price);
   formData.append('discount', tiendaProducts.discount);
@@ -101,7 +106,7 @@ e.preventDefault()
                                 <div className="col-md-6 text-center">
                                     <p style={{fontFamily:'Bien'}} className='text-secondary'>Selecciona tu foto</p>
                                     <label htmlFor="UploadImg2"><PublishIcon/></label>
-                                    <input onChange={handleUploadImage}  type="file" id="UploadImg2" style={{display:'none'}}/>
+                                    <input onChange={handleUploadImage2}  type="file" id="UploadImg2" style={{display:'none'}}/>
                                 </div>
                             </div>
                         </div>
