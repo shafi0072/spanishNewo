@@ -161,14 +161,14 @@ const SellerPanel = () => {
                             <div className="form-group">
                                     <h6 style={{color:'#ada9a9', fontFamily:"Bien"}} htmlFor="exampleFormControlInput1">Ingresos estimados</h6>
                                     <p style={{color:'#ada9a9', fontFamily:"Bien"}}> Aquello que consideras que deberí <br/> ser el mínimo </p>
-                                    <input nChange={handleOnChange} type="number" className="form-control" name="Ingresos" id="exampleFormControlInput1" placeholder="S/"/>
+                                    <input onChange={handleOnChange} type="number" className="form-control" name="Ingresos" id="exampleFormControlInput1" placeholder="S/"/>
                                 </div>
                             </div>
                             <div className="col-md-6">
                             <div className="form-group">
                                     <h6 style={{color:'#ada9a9', fontFamily:"Bien"}} htmlFor="exampleFormControlInput1">Precio de reserva</h6>
                                     <p style={{color:'#ada9a9', fontFamily:"Bien"}}> Posible solo para lotes con ingresos estimados<br/> mayores a S/100 </p>
-                                    <input type="number" nChange={handleOnChange} className="form-control" name="Precio" id="exampleFormControlInput1" placeholder="S/"/>
+                                    <input type="number" onChange={handleOnChange} className="form-control" name="Precio" id="exampleFormControlInput1" placeholder="S/"/>
                                 </div>
                             </div>
                         </div>
