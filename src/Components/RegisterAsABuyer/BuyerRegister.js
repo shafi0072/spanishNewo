@@ -8,12 +8,6 @@ import { userContext } from '../../App';
 const BuyerRegister = () => {
 
     const[signUpData, setSignUpData] = useState({
-        name:'',
-        LastName:'',
-        number:'',
-        Habla:'',
-        ciudad:'',
-        país:'',
         email:'',
         password:''
     });
@@ -49,30 +43,6 @@ const handleSubmit =(event) => {
   
   const handleBlur = event => {
     let isFieldValid;
-    if(event.target.name === 'name'){
-        isFieldValid = event.target.value.length > 1
-        console.log(isFieldValid);
-      }
-      if(event.target.name === 'LastName'){
-        isFieldValid = event.target.value.length > 1
-        console.log(isFieldValid);
-      }
-      if(event.target.name === 'number'){
-        isFieldValid = event.target.value.length > 1
-        console.log(isFieldValid);
-      }
-      if(event.target.name === 'Habla'){
-        isFieldValid = event.target.value.length > 1
-        console.log(isFieldValid);
-      }
-    if(event.target.name === 'ciudad'){
-      isFieldValid = event.target.value.length > 1
-      console.log(isFieldValid);
-    }
-    if(event.target.name === 'país'){
-        isFieldValid = event.target.value.length > 1
-        console.log(isFieldValid);
-      }
     if(event.target.name === 'email'){
       isFieldValid =/\S+@\S+\.\S+/.test(event.target.value);
       console.log(isFieldValid);
@@ -96,7 +66,13 @@ const handleSubmit =(event) => {
   }
  
  const handleSubmit2 = (event) => {
-  
+  fetch('http://localhost:5000/login/buyer',{
+      method:'POST',
+      headers:{'content-type':'application/json'},
+      body:JSON.stringify(signUpData)
+  })
+  .then(res => res.json())
+  .then(data => console.log(data))
   event.preventDefault();
 }
 const handleLogInRelode2 = () => {
@@ -150,43 +126,8 @@ const handleLogInRelode2 = () => {
                        <div className="RegisterInfo d-flex justify-content-center">
                        {userInfo.isBuyerNeedSignUp&&<div className="mt-5 formDiv">
                        <form  onSubmit={handleSubmit}>
-                       <div class="form-group">
-                               <label for="exampleInputEmail1">Nombre de pila</label>
-                               <input
-                                   type="text"
-                                   class="form-control"
-                                   name="name"
-                                   onChange={handleBlur}
-                                   id="exampleInputEmail1"
-                                   aria-describedby="emailHelp"
-                                   placeholder="Nombre de pila"/>
-                               
-                           </div>
-                           <div class="form-group">
-                               <label for="exampleInputEmail1">Apellido</label>
-                               <input
-                                   type="text"
-                                   class="form-control"
-                                   onChange={handleBlur}
-                                   name="LastName"
-                                   id="exampleInputEmail1"
-                                   aria-describedby="emailHelp"
-                                   placeholder="Apellido"/>
-                             
-                           </div>
                           
-                           <div class="form-group">
-                               <label for="exampleInputEmail1">Número de teléfono</label>
-                               <input
-                                   type="number"
-                                   class="form-control"
-                                   onChange={handleBlur}
-                                   name="number"
-                                   id="exampleInputEmail1"
-                                   aria-describedby="emailHelp"
-                                   placeholder="Número de teléfono"/>
-                              
-                           </div>
+                           
                            <div class="form-group">
                                <label for="exampleInputEmail1">Correo electrónico</label>
                                <input
@@ -199,42 +140,6 @@ const handleLogInRelode2 = () => {
                                    placeholder="Correo electrónico"/>
                               
                            </div>
-                           <div class="form-group">
-                               <label for="exampleInputEmail1">Habla a</label>
-                               <input
-                                   type="text"
-                                   class="form-control"
-                                   onChange={handleBlur}
-                                   name="Habla"
-                                   id="exampleInputEmail1"
-                                   aria-describedby="emailHelp"
-                                   placeholder="Habla a"/>
-                              
-                           </div>
-                           <div class="form-group">
-                               <label for="exampleInputEmail1">ciudad</label>
-                               <input
-                                   type="text"
-                                   class="form-control"
-                                   onChange={handleBlur}
-                                   name="ciudad"
-                                   id="exampleInputEmail1"
-                                   aria-describedby="emailHelp"
-                                   placeholder="ciudad"/>
-                              
-                           </div>
-                           <div class="form-group">
-                           <label for="exampleInputEmail1">país</label>
-                           <input
-                               type="text"
-                               class="form-control"
-                               onChange={handleBlur}
-                               name="país"
-                               id="exampleInputEmail1"
-                               aria-describedby="emailHelp"
-                               placeholder="país"/>
-                          
-                       </div>
                            <div class="form-group">
                                <label for="exampleInputPassword1">Contraseña</label>
                                <input
