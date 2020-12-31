@@ -21,6 +21,7 @@ import AdminMain from './Components/AdminPanel/AdminPanelMain/AdminMain';
 import TiendaDetails from './Components/Tienda/TiendaDetails/TiendaDetails';
 import SellerPanel from './Components/Auction/SellerPanel/SellerPanel';
 import DashboardMain from './Components/Dashboard/DashboardMain/DashboardMain';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
 export const userContext = createContext();
 
@@ -82,9 +83,9 @@ function App() {
             <Route path='/cat/over/:id'>
               <CatalogoOver/>
             </Route>
-            <Route  path='/tiendaMain'>
+            <PrivateRoute path='/tiendaMain'>
                 <TiendaMain/>
-            </Route>
+            </PrivateRoute>
             <Route path='/0629312'>
               <DashboardMain/>
             </Route>

@@ -3,9 +3,15 @@ import Footer from '../Footer/Footer';
 import Navbar from '../Shared/Navbar/Navbar';
 import './BuyerRegister.css';
 import { userContext } from '../../App';
+import { useHistory, useLocation } from 'react-router-dom';
 
 
 const BuyerRegister = () => {
+    const history = useHistory();
+    const location = useLocation();
+
+    const { from } = location.state || { from: { pathname: "/" } };
+
 
     const[signUpData, setSignUpData] = useState({
         email:'',
@@ -59,7 +65,6 @@ const handleSubmit =(event) => {
 
       const DataUser = {...signUpData}
       DataUser[event.target.name] = event.target.value;
-      setUserInfo(newUserInfo);
       setSignUpData(DataUser);
       
     }
@@ -72,7 +77,15 @@ const handleSubmit =(event) => {
       body:JSON.stringify(signUpData)
   })
   .then(res => res.json())
-  .then(data => console.log(data))
+  .then(data => {
+      
+    setUserInfo(data[0])
+    history.replace(from);
+
+    })
+
+  history.replace(from);
+
   event.preventDefault();
 }
 const handleLogInRelode2 = () => {
@@ -89,9 +102,7 @@ const handleLogInRelode2 = () => {
             <Navbar/>
             <div className="">
                 <div className="row">
-                
                     <div className="col-md-6 pl-5 mt-5 container">
-                   
                         <div className="d-flex justify-content-center">
                         <div className="FormInfoStatus">
                         <h1
