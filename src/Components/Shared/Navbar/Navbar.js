@@ -17,7 +17,7 @@ const Navbar = () => {
         <div class="collapse navbar-collapse fullMenu" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-5">
             <a class="nav-link menuStyling active" href="#">Inicio <span class="sr-only">(current)</span></a>
-            <a class="nav-link menuStyling active" href="#">Tienda</a>
+            <Link class="nav-link menuStyling active" to="/tiendaMain">Tienda</Link>
             <a class="nav-link menuStyling active" href="#">Subasta</a>
             <a class="nav-link menuStyling active" href="#">Sé un distribuidor</a>
             <a class="nav-link menuStyling BlackScreen" href="#">Vender Colecciones</a>

@@ -3,6 +3,7 @@ import AddCircleIcon from '@material-ui/icons/AddCircle';
 import DashboardTiendaProducts from './DashboardTiendaProducts';
 import DashTiendaNuevoproducto from './DashTiendaNuevoproducto';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import DashTiendaPedidos from './DashTiendaPedidos';
 const DashboardTiendaMain = () => {
     const [tiendaProducts, setTiendaProducts] = useState([])
     const [subMenu, setSubMenu] = useState({
@@ -146,6 +147,7 @@ const DashboardTiendaMain = () => {
             </div>}
             {subMenu.Productos && tiendaProducts.map(date => <DashboardTiendaProducts date = {date}/>)}
             {subMenu.isProductUpload && <DashTiendaNuevoproducto/>}
+            <DashTiendaPedidos/>
         </div>
     );
 };

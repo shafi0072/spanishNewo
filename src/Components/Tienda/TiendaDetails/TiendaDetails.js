@@ -11,7 +11,20 @@ import RemoveIcon from '@material-ui/icons/Remove';
 const TiendaDetails = () => {
     const {id} = useParams();
     const [products, setProducts] = useState({})
-    const {name, img, description} = products
+    const {name, img, description} = products;
+    const hanldeAddToCart = (e) => {
+        fetch(`http://localhost:5000/cartforTienda`,{
+            method:"POST",
+            headers:{'content-type':'application/json'},
+            body:JSON.stringify(products)
+        })
+        .then(res => res.json())
+        .then(success => {
+            if(success){
+               console.log('its posted on database');
+            }
+        })
+    }
     useEffect(() => {
         fetch(`http://localhost:5000/findByID/${id}`)
             .then(res => res.json())
@@ -99,7 +112,9 @@ const TiendaDetails = () => {
                                             className="form-control">Comprar ahora</button>
                                         <br/>
                                         <button
+                                            onClick={hanldeAddToCart}
                                             style={{
+                                        
                                                 backgroundColor: 'white',
                                                 border: '1px solid black',
                                                 color: '#2c2c2c',
