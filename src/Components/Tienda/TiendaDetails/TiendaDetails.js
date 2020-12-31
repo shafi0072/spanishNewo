@@ -10,7 +10,10 @@ import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
 const TiendaDetails = () => {
     const {id} = useParams();
-    const [products, setProducts] = useState({})
+    const [products, setProducts] = useState({
+        Color:"",
+        Tamaño:""
+    })
     const {name, img, description} = products;
     const hanldeAddToCart = (e) => {
         fetch(`http://localhost:5000/cartforTienda`,{
