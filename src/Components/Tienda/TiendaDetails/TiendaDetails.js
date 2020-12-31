@@ -12,7 +12,8 @@ const TiendaDetails = () => {
     const {id} = useParams();
     const [products, setProducts] = useState({
         Color:"",
-        Tamaño:""
+        Tamaño:"",
+        Quantity:""
     })
     const {name, img, description} = products;
     const hanldeAddToCart = (e) => {
@@ -38,9 +39,7 @@ const TiendaDetails = () => {
             <Navbar/>
             <div className="row">
                 <div className="col-md-6 pl-5 d-flex justify-content-end">
-
                     <Slider2 data={products}/>
-
                 </div>
                 <div className="col-md-6 mb-5">
                     <div className="row">
