@@ -35,7 +35,7 @@ const TiendaProducts = (props) => {
            {spinner.spninner && <SpinnerLoad/>}
            {spinner.products && <div className="row pr-5">
             {
-                tiendaProducts.map(data => <TiendaProduct data={data} />)
+                tiendaProducts.map(data => <TiendaProduct key={data.key} data={data} />)
             }
            </div>}
            

@@ -22,6 +22,8 @@ import TiendaDetails from './Components/Tienda/TiendaDetails/TiendaDetails';
 import SellerPanel from './Components/Auction/SellerPanel/SellerPanel';
 import DashboardMain from './Components/Dashboard/DashboardMain/DashboardMain';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import NotFound from './Components/NotFound/NotFound';
+import SubastasProducts from './Components/Subastas/SubastasProducts/SubastasProducts';
 
 export const userContext = createContext();
 
@@ -86,7 +88,7 @@ function App() {
             <PrivateRoute path='/tiendaMain'>
                 <TiendaMain/>
             </PrivateRoute>
-            <Route path='/0629312'>
+            <Route path='/adminPanel'>
               <DashboardMain/>
             </Route>
             <Route path='/tiendaDetails/:id'>
@@ -94,6 +96,12 @@ function App() {
             </Route>
             <Route path='/auction/sellerPanel'>
                 <SellerPanel/>
+            </Route>
+            <Route path="/subastas/stamp">
+                <SubastasProducts/>
+            </Route>
+            <Route path="*">
+               <NotFound/>
             </Route>
             
           </Switch>

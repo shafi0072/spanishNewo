@@ -17,7 +17,7 @@ const TiendaDetails = () => {
     })
     const {name, img, description} = products;
     const hanldeAddToCart = (e) => {
-        fetch(`http://localhost:5000/cartforTienda`,{
+        fetch("http://localhost:5000/cartforTienda",{
             method:"POST",
             headers:{'content-type':'application/json'},
             body:JSON.stringify(products)
@@ -33,7 +33,7 @@ const TiendaDetails = () => {
         fetch(`http://localhost:5000/findByID/${id}`)
             .then(res => res.json())
             .then(data => setProducts(data));
-    }, [products])
+    }, [])
     return (
         <div>
             <Navbar/>

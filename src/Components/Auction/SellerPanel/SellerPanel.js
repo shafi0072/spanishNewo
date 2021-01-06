@@ -97,7 +97,6 @@ const SellerPanel = () => {
                                     <div className="col-md-8">
                                     <h6 style={{color:'#ada9a9', fontFamily:"Bien"}} htmlFor="exampleFormControlInput1">Estado</h6>
                                         <div className="row">
-                                        
                                             <div className="col-md-4">
                                                 <input onChange={handleOnChange} type="checkbox"  value="MNH" name="MNH" id=""/>
                                                 <label className='ml-1'> MNH</label>
