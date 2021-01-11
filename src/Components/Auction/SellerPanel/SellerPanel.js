@@ -25,24 +25,36 @@ const SellerPanel = () => {
     const handleOnChange = (e) => {
         const newSubastas = {...subastasDetails};
         newSubastas[e.target.name] = e.target.value;
-        setSubastasDetails(newSubastas)
+        setSubastasDetails(newSubastas);
     };
     const [files, setFile] = useState(null);
     const [files2, setFile2] = useState(null);
+    const [files3, setFile3] = useState(null);
+
     const handleFileChange = (e) => {
         const newFile = e.target.files[0];
         setFile(newFile)
+        console.log(files);
     }
 
     const handleFileChange2 = (e) => {
         const newFile = e.target.files[0];
         setFile2(newFile)
+        console.log(files2);
+    }
+    const handleFileChange3 = (e) => {
+        const newFile = e.target.files[0];
+        setFile3(newFile)
+        console.log('hellow world');
+        console.log(files3);
     }
 
  const handleSubmit = (e) => {
+     
     const formData = new FormData()
     formData.append('file', files);
     formData.append('file2', files2);
+    formData.append('file3', files3);
     formData.append('Nombre', subastasDetails.Nombre);
     formData.append('Año', subastasDetails.Año);
     formData.append('MNH', subastasDetails.MNH);
@@ -68,6 +80,7 @@ const SellerPanel = () => {
     .catch(error => {
       console.error(error)
     })
+
 
  }
 
@@ -192,14 +205,14 @@ const SellerPanel = () => {
                             <div className="col-md-4" >
                             <div style={{border:'1px solid lightgray', borderRadius:'10px'}} className="d-flex justify-content-between align-items-center p-4">
                                     <InsertPhotoIcon style={{color:'#ada9a9'}} fontSize="large" />
-                                    <input onChange={handleFileChange} type="file" name="" style={{display:'none'}} id="customButtonFOrUpload"/>
+                                    <input onChange={handleFileChange2} type="file" name="" style={{display:'none'}} id="customButtonFOrUpload"/>
                                     <label style={{color:'#ada9a9', fontFamily:"Bien", cursor:'pointer'}} className="text-center" htmlFor="customButtonFOrUpload"> select <br/> front photo <br/> <BackupOutlinedIcon/> </label>
                                 </div>
                             </div>
                             <div className="col-md-4">
                             <div style={{border:'1px solid lightgray', borderRadius:'10px'}} className="d-flex justify-content-between align-items-center p-4">
                                     <InsertPhotoIcon style={{color:'#ada9a9'}} fontSize="large" />
-                                    <input onChange={handleFileChange2} type="file" name="" style={{display:'none'}} id="customButtonFOrUpload"/>
+                                    <input onChange={handleFileChange3} type="file" name="" style={{display:'none'}} id="customButtonFOrUpload"/>
                                     <label style={{color:'#ada9a9', fontFamily:"Bien", cursor:'pointer'}} className="text-center" htmlFor="customButtonFOrUpload"> select <br/> front photo <br/> <BackupOutlinedIcon/> </label>
                                 </div>
                             </div>
