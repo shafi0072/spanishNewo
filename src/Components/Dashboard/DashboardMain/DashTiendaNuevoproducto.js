@@ -37,7 +37,7 @@ const handleSubmit = (e) => {
   formData.append('discount', tiendaProducts.discount);
   formData.append('Descipción', tiendaProducts.Descipción);
   formData.append('ShippingFee', tiendaProducts.ShippingFee);
-  
+  console.log('h');
   fetch('http://localhost:5000/tienda/postProducts', {
     method: 'POST',
     body: formData
