@@ -27,32 +27,34 @@ const SellerPanel = () => {
         newSubastas[e.target.name] = e.target.value;
         setSubastasDetails(newSubastas);
     };
-    const [files, setFile] = useState(null);
-    const [files2, setFile2] = useState(null);
-    const [files3, setFile3] = useState(null);
+    const [files, setFile] = useState([]);
+    const [files2, setFile2] = useState([]);
+    const [files3, setFile3] = useState([]);
 
     const handleFileChange = (e) => {
-        const newFile = e.target.files[0];
+        const newFile = [...files];
+        newFile.file1 = e.target.files[0]
         setFile(newFile)
-        console.log(files);
+        console.log('file1',newFile.file1 );
     }
 
     const handleFileChange2 = (e) => {
-        const newFile = e.target.files[0];
+        const newFile = [...files2];
+        newFile.file2 = e.target.files[0]
         setFile2(newFile)
-        console.log(files2);
+        console.log('file2',newFile.file2 );
     }
     const handleFileChange3 = (e) => {
-        const newFile = e.target.files[0];
+        const newFile = [...files3];
+        newFile.file3 = e.target.files[0]
         setFile3(newFile)
-        console.log('hellow world');
-        console.log(files3);
+        console.log('file3',newFile.file3);
     }
 
  const handleSubmit = (e) => {
      
     const formData = new FormData()
-    formData.append('file', files);
+    formData.append('file', files.file1);
     formData.append('file2', files2);
     formData.append('file3', files3);
     formData.append('Nombre', subastasDetails.Nombre);
@@ -68,7 +70,7 @@ const SellerPanel = () => {
     formData.append('Descipción', subastasDetails.Descipción);
     formData.append('Ingresos', subastasDetails.Ingresos);
     formData.append('Precio', subastasDetails.Precio);
-    
+    console.log(files);
     fetch('http://localhost:5000/subastas/stamp', {
       method: 'POST',
       body: formData
@@ -81,6 +83,7 @@ const SellerPanel = () => {
       console.error(error)
     })
 
+    e.preventDefatult();
 
  }
 
@@ -205,15 +208,15 @@ const SellerPanel = () => {
                             <div className="col-md-4" >
                             <div style={{border:'1px solid lightgray', borderRadius:'10px'}} className="d-flex justify-content-between align-items-center p-4">
                                     <InsertPhotoIcon style={{color:'#ada9a9'}} fontSize="large" />
-                                    <input onChange={handleFileChange2} type="file" name="" style={{display:'none'}} id="customButtonFOrUpload"/>
-                                    <label style={{color:'#ada9a9', fontFamily:"Bien", cursor:'pointer'}} className="text-center" htmlFor="customButtonFOrUpload"> select <br/> front photo <br/> <BackupOutlinedIcon/> </label>
+                                    <input onChange={handleFileChange2} type="file" name="" style={{display:'none'}} id="customButtonFOrUpload2"/>
+                                    <label style={{color:'#ada9a9', fontFamily:"Bien", cursor:'pointer'}} className="text-center" htmlFor="customButtonFOrUpload2"> select <br/> front photo <br/> <BackupOutlinedIcon/> </label>
                                 </div>
                             </div>
                             <div className="col-md-4">
                             <div style={{border:'1px solid lightgray', borderRadius:'10px'}} className="d-flex justify-content-between align-items-center p-4">
                                     <InsertPhotoIcon style={{color:'#ada9a9'}} fontSize="large" />
-                                    <input onChange={handleFileChange3} type="file" name="" style={{display:'none'}} id="customButtonFOrUpload"/>
-                                    <label style={{color:'#ada9a9', fontFamily:"Bien", cursor:'pointer'}} className="text-center" htmlFor="customButtonFOrUpload"> select <br/> front photo <br/> <BackupOutlinedIcon/> </label>
+                                    <input onChange={handleFileChange3} type="file" name="" style={{display:'none'}} id="customButtonFOrUpload3"/>
+                                    <label style={{color:'#ada9a9', fontFamily:"Bien", cursor:'pointer'}} className="text-center" htmlFor="customButtonFOrUpload3"> select <br/> front photo <br/> <BackupOutlinedIcon/> </label>
                                 </div>
                             </div>
                         </div>

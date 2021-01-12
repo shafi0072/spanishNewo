@@ -9,7 +9,7 @@ const TiendaProducts = (props) => {
         products: true
     })
     useEffect(() => {
-        fetch('http://localhost:5000/tiendaProducts')
+        fetch('https://polar-inlet-87476.herokuapp.com/tiendaProducts')
         .then(res => res.json())
         .then(data => setTiendaProducts(data))
     }, [])

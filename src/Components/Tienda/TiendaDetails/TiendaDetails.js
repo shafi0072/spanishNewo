@@ -17,7 +17,7 @@ const TiendaDetails = () => {
     })
     const {name, img, description} = products;
     const hanldeAddToCart = (e) => {
-        fetch("http://localhost:5000/cartforTienda",{
+        fetch("https://polar-inlet-87476.herokuapp.com/cartforTienda",{
             method:"POST",
             headers:{'content-type':'application/json'},
             body:JSON.stringify(products)

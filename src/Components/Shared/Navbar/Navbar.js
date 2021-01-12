@@ -16,13 +16,13 @@ const Navbar = () => {
         </button>
         <div class="collapse navbar-collapse fullMenu" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-5">
-            <a class="nav-link menuStyling active" href="#">Inicio <span class="sr-only">(current)</span></a>
+            <Link class="nav-link menuStyling active" href="#">Inicio <span class="sr-only">(current)</span></Link>
             <Link class="nav-link menuStyling active" to="/tiendaMain">Tienda</Link>
-            <Link class="nav-link menuStyling active" to="/subastas">Subasta</Link>
-            <a class="nav-link menuStyling active" href="#">Sé un distribuidor</a>
-            <a class="nav-link menuStyling BlackScreen" href="#">Vender Colecciones</a>
-            <a class="nav-link menuStyling BlackScreen" href="#">Catálogo</a>
-            <a class="nav-link menuStyling BlackScreen" href="#">Contacto</a>
+            <Link class="nav-link menuStyling active" to="/subastas/stamp">Subasta</Link>
+            <Link class="nav-link menuStyling active" href="#">Catálogo</Link>
+            <Link class="nav-link menuStyling BlackScreen" href="#">Contacto</Link>
+            <Link class="nav-link menuStyling BlackScreen" href="#">Regístrate</Link>
+            <Link class="nav-link menuStyling BlackScreen" href="#">Inicarsesión</Link>
           </div>
           <div className="CartLogo pr-2">
             <ShoppingCartIcon className='shopingCart'/>

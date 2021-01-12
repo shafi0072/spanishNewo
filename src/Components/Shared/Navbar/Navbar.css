@@ -1,5 +1,6 @@
 .menuStyling{
-    padding: 20px 30px!important;
+    padding: 5% 5%!important;
+    width: 100%!important;
 }
 .fullMenu{
     display: flex;
@@ -7,6 +8,7 @@
 }
 .BlackScreen{
     color: white!important;
+    
 }
 .navBg{
     

@@ -85,9 +85,9 @@ function App() {
             <Route path='/cat/over/:id'>
               <CatalogoOver/>
             </Route>
-            <PrivateRoute path='/tiendaMain'>
+            <Route path='/tiendaMain'>
                 <TiendaMain/>
-            </PrivateRoute>
+            </Route>
             <Route path='/adminPanel'>
               <DashboardMain/>
             </Route>
